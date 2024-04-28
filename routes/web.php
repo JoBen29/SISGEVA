@@ -15,8 +15,12 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-    return view('welcome');
-    // hola mundo
+    // prueba 5
+    // pruweba 6
+    // prueba 7
+    //prueba 8
 
     //Eduardo
+
+
 });
