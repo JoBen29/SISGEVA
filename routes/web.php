@@ -15,24 +15,4 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-    // prueba 5
-    // pruweba 6
-    // prueba 7
-    //prueba 8
-
-    //Eduardo
-    //Eduardo2
-    //Eduardo3
-
 });
-// aderly baldeon
-// kevolp 
-
-// aderly baldeon
-// kevolp 
-
-// aderly baldeon
-// kevolp 
-
-// aderly baldeon
-// kevolp 
