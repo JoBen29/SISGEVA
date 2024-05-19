@@ -6,8 +6,27 @@ export default defineConfig({
     plugins: [
         vue(),
         laravel({
-            input: ['resources/js/app.js', 'resources/sass/app.scss'],
+            input: ['resources/js/app.js'],
+
             refresh: true,
         }),
     ],
+    resolve: {
+        alias: {
+            /* '@': resolve(__dirname, 'resources/js'), */
+            'vue': 'vue/dist/vue.esm-bundler.js',
+        }
+    },
+    server: {
+        hmr: {
+            host: 'localhost',
+        },
+    },
+    build: {
+        manifest: true,
+        outDir: 'public/build',
+        rollupOptions: {
+            input: 'resources/js/app.js',
+        },
+    },
 });

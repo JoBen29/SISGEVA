@@ -1,5 +1,12 @@
-/* import './bootstrap'; */
+import './bootstrap';
 import { createApp } from 'vue';
-import App from './App.vue';
+import RegistroForm from './components/registroForm.vue'
+import Productos from './components/productos.vue';
 
-createApp(App).mount('#app');
+const registroform = createApp({});
+registroform.component('registro-form', RegistroForm);
+registroform.mount('#registroForm');
+
+const productos = createApp({});
+productos.component('productos', Productos)
+productos.mount('#productos')
