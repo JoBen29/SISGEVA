@@ -6,14 +6,13 @@ export default defineConfig({
     plugins: [
         vue(),
         laravel({
-            input: ['resources/js/app.js'],
+            input: ['resources/js/app.js', 'resources/css/app.css'],
 
             refresh: true,
         }),
     ],
     resolve: {
         alias: {
-            /* '@': resolve(__dirname, 'resources/js'), */
             'vue': 'vue/dist/vue.esm-bundler.js',
         }
     },
@@ -21,6 +20,7 @@ export default defineConfig({
         hmr: {
             host: 'localhost',
         },
+        host: true,
     },
     build: {
         manifest: true,
