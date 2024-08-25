@@ -1,13 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
 
-import register from "./components/registroForm.vue"
-import login from "./components/loginForm.vue"
-import products from "./components/productos.vue"
+import RegistroForm from "./components/RegistroForm.vue"
+import Login from "./components/Login.vue"
+import ProductItem from "./components/ProductItem.vue"
+import ProductList from "./components/ProductList.vue"
 
 const routes = [
-    { path: "/register", component: register },
-    { path: "/login", component: login},
-    { path: "/products", component: products },
+    { path: "/RegistroForm", component: RegistroForm },
+    { path: "/Login", component: Login},
+    { path: "/ProductItem", component: ProductItem },
+    { path: "/ProductList", component: ProductList},
+    
 ];
 
 const history = createWebHistory();
