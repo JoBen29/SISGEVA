@@ -1,5 +1,5 @@
 <template>
-  <div class="overlay">
+  <div class="overlay" @click.self="closeForm">
     <div class="login-form">
       <h2>Iniciar Sesión</h2>
       <form @submit.prevent="handleSubmit">
@@ -34,6 +34,38 @@
         </div>
         <button type="submit" :disabled="isSubmitting">Ingresar</button>
       </form>
+
+      <!-- Password Recovery Link -->
+      <div class="additional-links">
+        <router-link to="/recover-password" class="password-recovery-link">
+          ¿Olvidaste tu contraseña?
+        </router-link>
+      </div>
+
+      <!-- Registration Link -->
+      <div class="additional-links">
+        <p>¿No tienes una cuenta? 
+          <router-link to="/register" class="register-link">
+            Regístrate aquí
+          </router-link>
+        </p>
+      </div>
+
+      <!-- Social Media Login -->
+      <div class="social-media-login">
+        <p>O inicia sesión con:</p>
+        <div class="social-icons">
+          <a href="/auth/google" class="google-icon">
+            <img src="./img/google-icon.png" alt="Google" />
+          </a>
+          <a href="/auth/facebook" class="facebook-icon">
+            <img src="./img/facebook-icon.png" alt="Facebook" />
+          </a>
+          <a href="/auth/apple" class="apple-icon">
+            <img src="./img/apple-icon.png" alt="Apple" />
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -65,6 +97,10 @@ export default {
       // Reset form
       this.isSubmitting = false;
     },
+    closeForm() {
+      // Add logic to close the form, e.g., navigating away or hiding the form component
+      this.$emit('close');
+    },
   },
 };
 </script>
@@ -76,11 +112,11 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  background-color: rgba(0, 0, 0, 0.7); /* More transparent background */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensures the form is on top of other content */
+  z-index: 1000;
 }
 
 .login-form {
@@ -88,8 +124,8 @@ export default {
   width: 100%;
   padding: 2rem;
   border-radius: 8px;
-  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: rgba(255, 255, 255, 0.85); /* Transparent background for the form */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 }
 
 h2 {
@@ -127,7 +163,7 @@ input[type="password"] {
 }
 
 .form-check-label {
-  margin-bottom: 0; /* Removes default margin */
+  margin-bottom: 0;
 }
 
 button {
@@ -144,5 +180,32 @@ button {
 button:disabled {
   background-color: #aaa;
   cursor: not-allowed;
+}
+
+.additional-links {
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.additional-links a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+.social-media-login {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.social-icons img {
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
 }
 </style>

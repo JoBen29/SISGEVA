@@ -19,7 +19,7 @@ export default {
   data() {
     return {
       products: [
-        { id: 1, name: "Motorcycle A", description: "Description of Motorcycle A", price: 15000, image: "path-to-image-a.jpg" },
+        { id: 1, name: "250RR 2024", description: "Detalles tecnicos:", price: 15000, image: "path-to-image-a.jpg" },
         { id: 2, name: "Motorcycle B", description: "Description of Motorcycle B", price: 12000, image: "path-to-image-b.jpg" },
         // Add more products here
       ]
