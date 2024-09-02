@@ -21,8 +21,8 @@
       return {
         currentIndex: 0,
         images: [
-          './img/carrucel1.jpg',
-          './img/carrusel2.jpg',
+          'http://localhost/SISGEVA/resources/js/components/img/carrucel1.jpg',
+          'http://localhost/SISGEVA/resources/js/components/img/carrusel2.jpg',
           './img/carrusel3.jpg',
         ],
       };
@@ -46,49 +46,45 @@
   
   <style scoped>
   .carousel {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
-    overflow: hidden;
-  }
-  
-  .carousel-inner {
-    display: flex;
-    transition: transform 0.5s ease;
-  }
-  
-  .carousel-item {
-    min-width: 100%;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-  }
-  
-  .carousel-item.active {
-    opacity: 1;
-  }
-  
-  .carousel-item img {
-    width: 100%;
-    height: auto;
-  }
-  
-  .carousel-control {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0, 0, 0, 0.5);
-    color: #fff;
-    border: none;
-    padding: 1rem;
-    cursor: pointer;
-  }
-  
-  .prev {
-    left: 0;
-  }
-  
-  .next {
-    right: 0;
-  }
-  </style>
-  
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-item {
+  min-width: 100%;
+  transition: opacity 0.5s ease;
+}
+
+.carousel-item img {
+  width: 100%; /* Make sure the image fills the width of the container */
+  height: 400px; /* Fixed height for all images */
+  object-fit: cover; /* Cover the entire container without distorting the aspect ratio */
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+</style>
